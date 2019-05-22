@@ -11,7 +11,7 @@ function Isosurfaces( volume, isovalue )
     var color = new THREE.Color( R, G, B );
     cmap.push( [ S, '0x' + color.getHexString() ] );
     }
-
+    
     var geometry = new THREE.Geometry();
     var material = new THREE.MeshLambertMaterial();
 
@@ -74,7 +74,7 @@ function Isosurfaces( volume, isovalue )
 
     geometry.computeVertexNormals();
 
-    material.color = new THREE.Color().setHex(cmap[isovalue][1]);
+    material.color = new THREE.Color(cmap[isovalue][1]);
 
     return new THREE.Mesh( geometry, material );
 
